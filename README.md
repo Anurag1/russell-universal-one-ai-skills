@@ -2,9 +2,19 @@
 
 **Live, runnable prototypes** of novel AI capabilities inspired by Walter Russell’s *The Universal One* (1926).
 
-These are **design metaphors** turned into working Python code — not claims of physical truth. They explore how Russell’s unified-field, polarity, octave, and dimensionless-core ideas can become practical architectural primitives for next-generation AI systems.
+These are **design metaphors** turned into working code — not claims of physical truth. They explore how Russell’s unified-field, polarity, octave, and dimensionless-core ideas can become practical architectural primitives for next-generation AI systems.
 
-## Quick Start
+## 🌐 Live Demo (GitHub Pages)
+
+**https://anurag1.github.io/russell-universal-one-ai-skills/**
+
+Click the link above to run all six demos **instantly in your browser** (pure JavaScript, no install required).
+
+> **First-time setup (one click):**  
+> Go to the repository → **Settings** → **Pages** → under “Source” choose **Deploy from a branch** → Branch: `main` → Folder: `/ (root)` → Save.  
+> The live demo will be available at the URL above within 1–2 minutes.
+
+## Quick Start (Python)
 
 ```bash
 python russell_ai_skills_demo.py
@@ -38,9 +48,10 @@ These primitives can become:
 - Generative models whose latent is a dimensionless Mind potential
 - Multi-modal systems that share one continuous light field
 
-## Repository
+## Repository Contents
 
-- `russell_ai_skills_demo.py` — complete self-contained demo
+- `index.html` — **Live browser demo** (GitHub Pages)
+- `russell_ai_skills_demo.py` — complete self-contained Python demo
 - All tests pass with zero errors
 
 ## License
