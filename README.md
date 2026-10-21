@@ -8,11 +8,11 @@ These are **design metaphors** turned into working code — not claims of physic
 
 **https://anurag1.github.io/russell-universal-one-ai-skills/**
 
-Click the link above to run all six demos **instantly in your browser** (pure JavaScript, no install required).
+**Social / shareable page:** https://anurag1.github.io/russell-universal-one-ai-skills/social.html
 
 > **First-time setup (one click):**  
 > Go to the repository → **Settings** → **Pages** → under “Source” choose **Deploy from a branch** → Branch: `main` → Folder: `/ (root)` → Save.  
-> The live demo will be available at the URL above within 1–2 minutes.
+> The live demo will be available within 1–2 minutes.
 
 ## Quick Start
 
@@ -25,7 +25,13 @@ python russell_ai_skills_demo.py
 ```bash
 python russell_fno.py
 ```
-Requires `torch` + `numpy`. Trains a polarity-balanced FNO on synthetic data and reports live metrics.
+
+### Generate the PDF summary
+```bash
+pip install reportlab
+python generate_pdf.py
+```
+This creates `Russell_Universal_One_AI_Skills.pdf` — a clean single-page summary ready for social media.
 
 ## What is Implemented
 
@@ -37,7 +43,7 @@ Requires `torch` + `numpy`. Trains a polarity-balanced FNO on synthetic data and
 | 4 | **Dimensionless Core → Dimensional Appearance** | True knowledge is dimensionless; dimensions are projected | Compact core expands into rich form |
 | 5 | **Simple Mind Cause → Complex Effect** | Tiny causal parameters fully determine rich appearance | Controllable generation |
 | 6 | **Integrated Mini-Agent** | Full think cycle using all primitives | Light → octaves → balance → core → appearance |
-| 7 | **Russell-Enhanced FNO** | Classic FNO + polarity residual + dimensionless core + octave modes | Balance residual drops while learning PDE-like mapping |
+| 7 | **Russell-Enhanced FNO** | Classic FNO + polarity residual + dimensionless core + octave modes | Balance residual drops while learning |
 
 ## Live FNO Test Results (CPU)
 
@@ -46,8 +52,6 @@ Epoch   1 | Loss 0.06553 | Balance 0.147836 | Rel L2 1.0479
 Epoch  25 | Loss 0.05094 | Balance 0.046976 | Rel L2 1.0004
 Final Balance residual: 0.044681  (driven steadily toward zero)
 ```
-
-The polarity-balance term is successfully optimized jointly with the task loss.
 
 ## Why This Matters for Modern AI
 
@@ -62,8 +66,10 @@ Highest-impact targets: World Models (Genie, Cosmos…), Neural Operators, front
 ## Repository Contents
 
 - `index.html` — Live browser demo (GitHub Pages)
+- `social.html` — Social-media ready single page
 - `russell_ai_skills_demo.py` — Core skills demo (NumPy)
-- `russell_fno.py` — Russell-Enhanced Fourier Neural Operator (PyTorch, live-tested)
+- `russell_fno.py` — Russell-Enhanced Fourier Neural Operator (PyTorch)
+- `generate_pdf.py` — Script to generate the shareable PDF summary
 - All tests pass with zero errors
 
 ## License
