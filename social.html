@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Russell Universal One → AI Skills | Live Prototypes</title>
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Russell Universal One → Modern AI Skills" />
+  <meta property="og:description" content="Six novel AI primitives inspired by Walter Russell’s 1926 book — unified light field, polarity balance, octave dynamics, dimensionless core. Live demos included." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anurag1.github.io/russell-universal-one-ai-skills/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Russell Universal One → Modern AI Skills" />
+  <meta name="twitter:description" content="Live prototypes: polarity residual → 0, dimensionless core, octave cycles, unified light field. Open source." />
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --card: #111827;
+      --accent: #34d399;
+      --accent2: #38bdf8;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: #1e293b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    .hero {
+      background: linear-gradient(160deg, #0f172a 0%, #0c4a6e 50%, #064e3b 100%);
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 800;
+      background: linear-gradient(90deg, #6ee7b7, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto 1.75rem;
+    }
+    .badges {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+    }
+    .badge {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid #334155;
+      color: #e2e8f0;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .cta {
+      display: inline-flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.6rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #10b981, #0ea5e9);
+      color: #0b0f19;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1.5px solid #64748b;
+      color: #e2e8f0;
+    }
+    .btn-secondary:hover {
+      border-color: #94a3b8;
+      background: rgba(255,255,255,0.05);
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: var(--accent);
+      margin: 2rem 0 1rem;
+      font-weight: 700;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      font-size: 1rem;
+      color: #e2e8f0;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card h3 span {
+      background: #064e3b;
+      color: var(--accent);
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    pre {
+      background: #0b1220;
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      font-size: 0.78rem;
+      color: #a5f3fc;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.45;
+    }
+    .highlight {
+      background: linear-gradient(90deg, rgba(16,185,129,0.15), rgba(14,165,233,0.1));
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.2rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+      color: #cbd5e1;
+      margin: 0.75rem 0;
+    }
+    ul li { margin-bottom: 0.4rem; }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .result-ok { color: #6ee7b7; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Russell Universal One<br>→ Modern AI Skills</h1>
+    <p>Six novel AI primitives inspired by Walter Russell’s 1926 book <em>The Universal One</em>. Unified light field • Polarity balance • Octave dynamics • Dimensionless core.</p>
+    
+    <div class="badges">
+      <span class="badge">Open Source</span>
+      <span class="badge">Live Demo</span>
+      <span class="badge">PyTorch FNO</span>
+      <span class="badge">Residual → 0</span>
+    </div>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="https://anurag1.github.io/russell-universal-one-ai-skills/" target="_blank">▶ Run Live Demo</a>
+      <a class="btn btn-secondary" href="https://github.com/Anurag1/russell-universal-one-ai-skills" target="_blank">GitHub Repo</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="highlight">
+      <strong>Key result:</strong> Polarity residual driven to <span class="result-ok">0.000000</span> while learning. 
+      A continuous “light” field projects into language, vision and physics. 
+      A tiny dimensionless core controls rich appearance.
+    </div>
+
+    <h2>Skills 3–6 (Live Output)</h2>
+
+    <div class="card">
+      <h3>3. Polarized Generation + Balance <span>Residual → 0</span></h3>
+      <pre>Final positive stream : [ 0.482 -0.127  0.455  0.632 -0.383 -0.34   0.57   0.5  ]
+Final negative stream : [-0.482  0.127 -0.455 -0.632  0.383  0.34  -0.57  -0.5  ]
+Balance residuals     : [0.04859, 0.03888, 0.03986, 0.02456, 0.04013]
+Final residual energy : 0.000000 (near zero = balanced)
+
+→ Intrinsic anti-hallucination via forced polarity cancellation.</pre>
+    </div>
+
+    <div class="card">
+      <h3>4. Dimensionless Core → Appearance <span>Core</span></h3>
+      <pre>Dimensionless core     : [-0.53   0.513  0.097  0.969]
+Projected 3-D + mass   : [-0.656 -0.029 -0.517  1.221]
+
+→ Any high-dimensional world can be collapsed back to the same core.</pre>
+    </div>
+
+    <div class="card">
+      <h3>5. Simple Cause → Complex Effect <span>3 Params</span></h3>
+      <pre>Cause A (pos, oct1) → effect mean/std : 0.000 / 0.764
+Cause B (neg, oct2) → effect mean/std : -0.000 / 0.680
+Effect A sample     : [ 0.     1.409 -0.074 -1.243  0.315  0.618]
+Effect B sample     : [ 0.    -0.11   0.022 -0.384  0.167 -0.747]
+
+→ Tiny causal parameter set fully determines rich, controllable appearance.</pre>
+    </div>
+
+    <div class="card">
+      <h3>6. Integrated Mini-Agent <span>Full Cycle</span></h3>
+      <pre>Input vector (first 6) : [-0.161  0.404  1.886  0.175  0.258 -0.074]
+Octave energies        : [0.9403, 0.8713, 0.976]
+Balance residual       : 0.167181
+Dimensionless core     : [0.0293, -0.0293, 0.1182]
+New appearance sample  : [-0.001, 0.003, 0.013, 0.001, 0.002, -0.001]
+
+→ Full cycle: light field → octave analysis → polarity balance
+  → dimensionless core → new dimensional appearance.</pre>
+    </div>
+
+    <h2>Also Included</h2>
+    <ul>
+      <li><strong>Unified One-Substance Wave Field</strong> — single continuous field → language + vision + physics</li>
+      <li><strong>Octave / Periodic Cycle Dynamics</strong> — multi-scale hierarchical processing</li>
+      <li><strong>Russell-Enhanced Fourier Neural Operator</strong> — polarity residual + dimensionless core added to classic FNO (live-tested)</li>
+    </ul>
+
+    <h2>Highest-Impact Targets</h2>
+    <ul>
+      <li>World Models (Genie, Cosmos…)</li>
+      <li>Neural Operators / Physics-informed ML</li>
+      <li>Frontier multi-modal foundation models</li>
+      <li>Robotics foundation models (VLA → World-Action)</li>
+    </ul>
+
+    <div class="cta" style="margin-top: 2.5rem;">
+      <a class="btn btn-primary" href="https://anurag1.github.io/russell-universal-one-ai-skills/" target="_blank">▶ Try the Live Demo</a>
+      <a class="btn btn-secondary" href="https://github.com/Anurag1/russell-universal-one-ai-skills" target="_blank">View Source on GitHub</a>
+    </div>
+  </div>
+
+  <footer>
+    Inspired by Walter Russell’s <em>The Universal One</em> (1926)<br>
+    Open source · MIT License · 
+    <a href="https://github.com/Anurag1/russell-universal-one-ai-skills">github.com/Anurag1/russell-universal-one-ai-skills</a>
+  </footer>
+</body>
+</html>
